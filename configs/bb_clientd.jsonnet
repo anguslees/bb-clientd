@@ -1,8 +1,9 @@
 // List of clusters to which bb_clientd is permitted to connect.
 local clusters = {
-  'mycluster-prod.example.com': 'api.mycluster-prod.example.com',
-  'mycluster-qa.example.com': 'api.mycluster-qa.example.com',
-  'mycluster-dev.example.com': 'api.mycluster-dev.example.com',
+  //'mycluster-prod.example.com': 'api.mycluster-prod.example.com',
+  //'mycluster-qa.example.com': 'api.mycluster-qa.example.com',
+  //'mycluster-dev.example.com': 'api.mycluster-dev.example.com',
+  burner: std.extVar('REMOTE_EXECUTOR'),
 };
 
 local grpcClient(hostname, authorizationHeader, proxyURL) = {
